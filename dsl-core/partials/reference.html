@@ -1,0 +1,103 @@
+<div class="content">
+    <h2>Declaración de Entidades</h2>
+    <div class="highlighter-rouge">
+        <pre class="highlight">
+            <code>
+entity &lt;entity name&gt; {
+&lt;field name&gt; &lt;type&gt; [&lt;validation&gt;*]
+}
+            </code>
+        </pre>
+    </div>
+    <ul class="options">
+        <li>
+            <p><code class="highlighter-rouge">&lt;entity name&gt;</code> es el nombre de la Entidad,</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">&lt;field name&gt;</code> el nombre de uno de las propiedades de una entidad,</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">&lt;type&gt;</code> los tipos de datos soportados,</p>
+        </li>
+        <li>
+            <p>and as an option <code class="highlighter-rouge">&lt;validation&gt;</code> validaciones para las propiedades.</p>
+        </li>
+    </ul>
+    <h2>Declaración de Enumeraciones</h2>
+    <div class="highlighter-rouge">
+        <pre class="highlight">
+            <code>
+enum &lt;enum name&gt; {
+&lt;enum values&gt;
+}
+            </code>
+        </pre>
+    </div>
+    <ul class="options">
+        <li>
+            <p><code class="highlighter-rouge">&lt;enum name&gt;</code> es el nombre de una enum,</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">&lt;enum values&gt;</code> valores separados por coma en Mayúsculas</p>
+        </li>
+    </ul>
+    <h2>Declaración de Relaciones</h2>
+    <div class="highlighter-rouge">
+        <pre class="highlight">
+            <code>
+relationship &lt;type&gt; {
+&lt;from entity&gt;[{&lt;relationship name&gt;}]
+to
+&lt;to entity&gt;[{&lt;relationship name&gt;}]
+}
+            </code>
+        </pre>
+    </div>
+    <ul class="options">
+        <li>
+            <p><code class="highlighter-rouge">&lt;type&gt;</code> es el tipo de una relación (OneToMany | ManyToOne| OneToOne | ManyToMany)</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">&lt;from entity&gt;</code> es el nombre de una entidad que posee una relación,</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">&lt;to entity&gt;</code> es el nombre de una entidad hacia donde va la relación,</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">&lt;relationship name&gt;</code> es el nombre de la relación en la entidad.</p>
+        </li>
+    </ul>
+    <p>Los posibles tipos y validaciones están descritos aquí <a href="https://jhipster.github.io/jdl/#annexes">aquí</a>, si la validación requiere un valor, simplemente se agrega a la derecha<code class="highlighter-rouge">(&lt;value&gt;)</code> del nombre de la validación.</p>
+    <h2>Declaración de Opciones</h2>
+    <p>Es posible declarar algun de las opciones sopotadas a través del DSL, las opciones soportadas son:</p>
+    <ul class="options">
+        <li>
+            <p><code class="highlighter-rouge">paginate</code> habilida la paginación en una entidad con pager | pagination | infinite-scroll</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">service</code> habilita la capa de servicio para la entidad con serviceClass | serviceImpl</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">dto</code> habilita la generación de DTO para las entidades</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">skipClient</code> no genera front-end de la entidad</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">skipServer</code> no genera back-end para la entidad</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">angularSuffix</code> agrega un sufijo a los nombres de route en Angular</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">microservice</code> especifica el nombre de la aplicación de una entidad que se encuentra en otro microservicio.</p>
+        </li>
+        <li>
+            <p><code class="highlighter-rouge">search</code> especificar las opciones de busqueda para una entidad que se encuentre en otro servicio</p>
+        </li>
+    </ul>
+    <p>Refer <a target="_blank" href="https://jhipster.github.io/jdl/">JDL</a> documentation for more details.</p>
+
+    
+</div>
+<div class="logo-background"></div>

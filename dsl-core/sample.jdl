@@ -1,0 +1,27 @@
+entity Persona {
+	nombre String required minlength(3) maxlength(50),
+    primerApellido String required minlength(3) maxlength(50),
+    segundoApellido String minlength(3) maxlength(50),
+    edad Integer,
+    sexo Sexo,
+    correo String required minlength(2) maxlength(50),
+	telefono String,
+}
+
+entity Direccion {
+	delegacion String required minlength(3) maxlength(50),
+    avenida String required minlength(3) maxlength(50),
+    numInterior Integer,
+    codigoPostal Integer,
+}
+
+enum Sexo {
+	MUJER, HOMBRE
+}
+
+relationship OneToMany {
+	Persona{direccion} to Direccion
+}
+
+ paginate Persona, Direccion with pagination
+ service all with serviceImpl except Employee, Job
